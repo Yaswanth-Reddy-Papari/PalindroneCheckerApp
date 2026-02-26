@@ -16,5 +16,10 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println(input + " is NOT a Palindrome");
         }
+        System.out.println("=================================");
+        System.out.println(" Welcome to Palindrome Checker App ");
+        System.out.println(" Version : 1.0 ");
+        System.out.println("=================================");
+
     }
 }
