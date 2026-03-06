@@ -1,21 +1,21 @@
 import java.util.*;
 
-public class UseCase7PalindromeCheckerApp {
+public class UseCase8PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String input = "refer";
+        String input = "level";
 
-        Deque<Character> deque = new ArrayDeque<>();
+        LinkedList<Character> list = new LinkedList<>();
 
         for(char c : input.toCharArray()) {
-            deque.add(c);
+            list.add(c);
         }
 
         boolean isPalindrome = true;
 
-        while(deque.size() > 1) {
-            if(deque.removeFirst() != deque.removeLast()) {
+        while(list.size() > 1) {
+            if(list.removeFirst() != list.removeLast()) {
                 isPalindrome = false;
                 break;
             }
