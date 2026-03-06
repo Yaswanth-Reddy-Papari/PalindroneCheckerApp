@@ -1,42 +1,36 @@
-import java.util.*;
+public class UseCase13PalindromeCheckerApp {
 
-public class UseCase12PalindromeCheckerApp {
+    public static boolean checkPalindrome(String input) {
 
-    public static void main(String[] args) {
+        int start = 0;
+        int end = input.length() - 1;
 
-        String input = "level";
+        while(start < end) {
 
-        PalindromeStrategy strategy = new StackStrategy();
-
-        boolean result = strategy.check(input);
-
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + result);
-    }
-}
-
-interface PalindromeStrategy {
-
-    boolean check(String input);
-}
-
-class StackStrategy implements PalindromeStrategy {
-
-    public boolean check(String input) {
-
-        Stack<Character> stack = new Stack<>();
-
-        for(char c : input.toCharArray()) {
-            stack.push(c);
-        }
-
-        for(char c : input.toCharArray()) {
-
-            if(c != stack.pop()) {
+            if(input.charAt(start) != input.charAt(end))
                 return false;
-            }
+
+            start++;
+            end--;
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+
+        String input = "Level";
+
+        long startTime = System.nanoTime();
+
+        boolean result = checkPalindrome(input);
+
+        long endTime = System.nanoTime();
+
+        long executionTime = endTime - startTime;
+
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + result);
+        System.out.println("Execution Time : " + executionTime + " ns");
     }
 }
